@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Alight Motion Premium</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+
+    <div class="bg-glow"></div>
+    <div class="bg-glow2"></div>
+
+    <div class="container">
+
+        <div class="header">
+            <div class="badge">
+                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+                Generator
+            </div>
+            <h1>Alight <span class="highlight">Motion Premium</span></h1>
+            <p class="sub">Aktivasi premium — kirim &amp; verifikasi magic link</p>
+        </div>
+
+        <div class="step-indicator">
+            <div class="step-dot active" id="step1Dot">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <div class="step-line" id="stepLine"></div>
+            <div class="step-dot" id="step2Dot">2</div>
+        </div>
+
+        <div id="step1">
+            <div class="step-title">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 6L12 13L2 6"/><path d="M22 18L12 11L2 18"/><path d="M22 12L12 5L2 12"/></svg>
+                Kirim Magic Link
+            </div>
+            <div class="step-desc">Masukkan email untuk menerima link aktivasi Alight Motion Premium.</div>
+
+            <label class="label">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 6L12 13L2 6"/></svg>
+                Email
+            </label>
+            <div class="input-wrap">
+                <input id="emailInput" placeholder="Masukkan email Anda..." />
+            </div>
+
+            <button class="btn" id="btnSend">
+                <span class="spinner"></span>
+                <span class="btn-text">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+                    Kirim Magic Link
+                </span>
+            </button>
+        </div>
+
+        <div id="step2" style="display:none;">
+            <div class="step-title">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12L7 17L22 2"/></svg>
+                Verifikasi Link
+            </div>
+            <div class="step-desc">Tempel link verifikasi yang diterima di email.</div>
+
+            <label class="label">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+                Link Verifikasi
+            </label>
+            <div class="input-wrap">
+                <textarea id="linkInput" placeholder="Tempel link verifikasi di sini..."></textarea>
+            </div>
+
+            <button class="btn" id="btnVerify">
+                <span class="spinner"></span>
+                <span class="btn-text">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                    Verifikasi &amp; Aktivasi
+                </span>
+            </button>
+
+            <button class="btn btn-outline" id="btnBack">
+                <span class="btn-text">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+                    Kembali ke Kirim
+                </span>
+            </button>
+        </div>
+
+        <div class="status" id="status"></div>
+
+        <div class="info-box">
+            <h4>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+                Cara Aktivasi
+            </h4>
+            <ol>
+                <li>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                    <strong>Cek folder Spam</strong> — Pastikan email verifikasi tidak masuk ke folder spam.
+                </li>
+                <li>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                    <strong>Tandai sebagai bukan spam</strong> — Buka email dari noreply, lalu tekan "Laporkan bukan spam".
+                </li>
+                <li>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+                    <strong>Salin full link</strong> — Tekan lama "Login ke Alight Creative", lalu salin link lengkap.
+                </li>
+                <li>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                    <strong>Tempel link ke kolom verifikasi</strong> — Kembali ke halaman ini dan tempel seluruh link.
+                </li>
+            </ol>
+            <div class="warning">
+                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+                Link verifikasi biasanya hanya aktif beberapa menit. Selesaikan proses segera setelah email diterima.
+            </div>
+        </div>
+
+        <div class="footer">
+            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+            Alight Motion Premium Generator
+            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+        </div>
+
+    </div>
+
+    <script>
+        // Auto-generated config
+        window.__ENV__ = {
+            API_BASE: '/api'
+        };
+    </script>
+    <script src="/script.js"></script>
+</body>
+</html>
